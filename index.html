@@ -8,6 +8,272 @@
 </head>
 
 <body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form">
+                    <img src="img/Brekete-Family-Logo-290x300.jpg" alt="" class="center img-fluid" style="width:100px; height:100px;">
+                    <br>
+                    <span class="login100-form-title p-b-43">
+						Kindly Select, fill & Submit the Form Below
+					</span>
+
+
+                    <!-- If there is an error it will be shown. -->
+                    <?php if(!empty($_SESSION['message'])): ?>
+                    <div class="alert alert-danger alert-container" id="alert">
+                        <strong><center><?php echo htmlentities($_SESSION['message']) ?></center></strong>
+                        <?php unset($_SESSION['message']); ?>
+                    </div>
+                    <script>
+                        $('#alert').show(5000);
+                    </script>
+
+                    <?php endif; ?>
+                    <!-- If user account is created. -->
+                    <?php if(!empty($_SESSION['SuccessMessage'])): ?>
+                    <div class="alert alert-danger alert-container" id="alert">
+                        <strong><center><?php echo htmlentities($_SESSION['SuccessMessage']) ?></center></strong>
+                        <?php unset($_SESSION['SuccessMessage']); ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <div class="container-login100-form-btn">
+                        <a href="#about" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="login100-form-btn">
+							Report a Case
+						</a>
+                    </div>
+                    <br>
+
+
+
+                    <!-- <div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							or sign up using
+						</span>
+					</div> -->
+
+                    <br>
+
+                    <div class="login100-form-social flex-c-m">
+                        <!-- <a href="https://www.linkedin.com/in/godfreyenanghajonas" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a> -->
+                        <a href="https://web.facebook.com/BreketeFamily" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+
+                        <!-- <a href="https://twitter.com/HealthcareDesk" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a> -->
+                        <a href="https://www.youtube.com/channel/UCCKn6YDydzEW8e6RZwyrklg" class="login100-form-social-item flex-c-m bg-danger m-r-5">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
+                <div class="login100-more" style="background-image: url('includes/images/bg-01.jpg');">
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Kindly Fill & Submit your Report below</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="" method="post">
+                                <div>
+                                    <label>Name</label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+                                <br>
+
+                                <div>
+                                    <label>Phone No</label>
+                                    <input type="tel" name="phoneno" class="form-control" required>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Your Address</label>
+                                    <input type="text" name="useraddress" class="form-control" required>
+                                </div>
+                                <br>
+
+                                <label>State</label>
+                                <select name="state" class="form-control" required>
+													<option value="">Select</option>
+														<option value="Abia">Abia</option>
+														<option value="Adamawa">Adamawa</option>
+														<option value="Akwa Ibom">Akwa Ibom</option>
+														<option value="Anambra">Anambra</option>				
+														<option value="Bauchi">Bauchi</option>
+														<option value="Bayelsa">Bayelsa</option>	
+														<option value="Benue">Benue</option>
+														<option value="Borno">Borno</option>
+														<option value="Cross River">Cross River</option>
+														<option value="Delta">Delta</option>
+														<option value="Ebonyi">Ebonyi</option>
+														<option value="Edo">Edo</option>
+														<option value="Ekiti">Ekiti</option>
+														<option value="Enugu">Enugu</option>
+														<option value="FCT - Abuja">FCT - Abuja</option>
+														<option value="Gombe">Gombe</option>
+														<option value="Imo">Imo</option>
+														<option value="Jigawa">Jigawa</option>
+														<option value="Kaduna">Kaduna</option>
+														<option value="Kano">Kano</option>
+														<option value="Katsina">Katsina</option>
+														<option value="Kebbi">Kebbi</option>
+														<option value="Kogi">Kogi</option>
+														<option value="Kwara">Kwara</option>
+														<option value="Lagos">Lagos</option>
+														<option value="Nasarawa">Nasarawa</option>
+														<option value="Niger">Niger</option>
+														<option value="Ogun">Ogun</option>
+														<option value="Ondo">Ondo</option>
+														<option value="Osun">Osun</option>
+														<option value="Oyo">Oyo</option>
+														<option value="Plateau">Plateau</option>
+														<option value="Rivers">Rivers</option>
+														<option value="Sokoto">Sokoto</option>
+														<option value="Taraba">Taraba</option>
+														<option value="Yobe">Yobe</option>
+														<option value="Zamfara">Zamfara</option>
+  
+													</select>
+                                <br>
+
+                                <div>
+                                    <label>Gender</label>
+                                    <select type="text" name="gender" class="form-control">
+														<option value="">Select</option>
+														<option value="Male">Male</option>
+														<option value="Female">Female</option>
+													</select>
+                                </div>
+                                <br>
+
+
+                                <!-- <div>
+										<label>Email</label>
+										<input type="email" name="email" class="form-control">
+									</div>		 -->
+
+                                <!-- <br> -->
+                                <!-- <div>
+										<label>Case Type</label>
+										<select type="text" name="casetype" class="form-control" required>
+										<option value="">Select</option>
+											<option value="Attitude">Attitude of Healthcare Workers (Doctors or Nurses)</option>
+											<option value="Stealing">Theft(Stealing)</option>
+											<option value="Charges">Exorbitant Charges</option>
+											<option value="Wrong Administration">Wrong Administration of Medication</option>
+											<option value="Others">Others</option>
+										</select>
+										</div> -->
+                                <br>
+                                <div>
+                                    <label>Description</label>
+                                    <textarea name="description" class="form-control" required></textarea>
+                                </div>
+                                <br>
+                                <!-- <div>
+											<label>Health Facility</label>
+											<input type="text" name="facility" class="form-control" placeholder="Name of health facility">
+											</div>
+											<br>
+											<div>
+												<label>Address of Health Facilty</label>
+												<input type="text" name="facilityaddress" class="form-control" placeholder="Address of health facility given above">
+												</div>
+												<br>
+												<div> -->
+
+                        </div>
+                        <br>
+
+                        <input type="submit" name="submit" value="Submit" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="modalcenter" tabindex="-1" role="dialog" aria-labelledby="modalcentertitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalcentertitle">Success!</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+                </div>
+                <div class="modal-body">
+                    <p>Your message was sent successfully.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalcenter2" tabindex="-1" role="dialog" aria-labelledby="modalcentertitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalcentertitle">Error!</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+                </div>
+                <div class="modal-body">
+                    <p>An error occured.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="includes/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="includes/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="includes/vendor/bootstrap/js/popper.js"></script>
+    <script src="includes/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="includes/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="includes/vendor/daterangepicker/moment.min.js"></script>
+    <script src="includes/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="includes/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="includes/js/main.js"></script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 
 </body>
 
